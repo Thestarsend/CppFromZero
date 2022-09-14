@@ -2,9 +2,8 @@
 // Created by 11613 on 2022/9/14.
 //
 
+#include <iomanip>
 #include "iostream"
-#include "regex"
-
 using namespace std;
 
 void firstMission(){
@@ -12,7 +11,11 @@ void firstMission(){
     int input;
     cin>>input;
     bool flag = input % 7 == 0;
-    cout<<flag;
+    if(flag){
+        cout<<"Yes";
+    }else{
+        cout<<"No";
+    }
 
 }
 
@@ -40,7 +43,7 @@ void secondMission(){
         }
     }
 
-    cout<<sum;
+    cout<<fixed<<setprecision(2)<<sum;
 
 }
 
@@ -60,7 +63,11 @@ void thirdMission(){
         }
         last = (int)input[i];
     }
-    cout << flag;
+    if(flag){
+        cout<<"Yes";
+    }else{
+        cout<<"No";
+    }
 }
 
 void fourthMission(){
@@ -105,13 +112,13 @@ void fifthMission(){
     action[2] = input % 5 == 0;
     action[3] = input % 7 == 0;
     for (int i = 1; i < 4; i++) {
-        if (action){
+        if (action[i]){
             sum++;
         }
     }
     switch (sum) {
         case 1:{
-            cout << "c";
+            cout << "c\n";
             for (int i = 1; i < 4; ++i) {
                 if (action[i]){
                     cout << flag00[i];
@@ -120,9 +127,13 @@ void fifthMission(){
             break;
         }
         case 2:{
-            cout << "b";
+            cout << "b\n";
+            bool flag = false;
             for (int i = 1; i < 4; ++i) {
-                if (action[i]){
+                if (action[i]&&!flag){
+                    cout << flag00[i] << " ";
+                    flag = true;
+                } else if (action[i]&&flag){
                     cout << flag00[i];
                 }
             }
@@ -161,37 +172,44 @@ void sixthMission(){
 void seventhMission(){
 /*    7. 编程实现，用户输入的2个操作数和1个运算符（ 只包含+、-、*、/ ），由计算机输出运算结果。*/
     string input[3];
-    double result;
-    cin >> input[0] >> input[1] >> input[2];
-    double a = stod(input[0]);
-    double b = stod(input[2]);
+    string result;
+    cin >> input[0] >> input[2];
+    cin >> input[1];
+    int a = stod(input[0]);
+    int b = stod(input[2]);
     switch (input[1].data()[0]) {
         case '+':{
-            result = a+b;
+            result = to_string(a+b);
             break;
         }
         case '-':{
-            result = a-b;
+            result = to_string(a-b);
             break;
         }
         case '*':{
-            result = a*b;
+            result = to_string(a*b);
             break;
         }
         case '/':{
-            result = a/b;
+            if (b != 0){
+                result = to_string(a/b);
+            } else{
+                result = "Error!";
+            }
+
             break;
         }
     }
-    cout << result;
+
+    cout<< result;
 }
 
 int main(){
-    firstMission();
-    secondMission();
-    thirdMission();
-    fourthMission();
-    fifthMission();
-    sixthMission();
+//    firstMission();
+//    secondMission();
+//    thirdMission();
+//    fourthMission();
+//    fifthMission();
+//    sixthMission();
     seventhMission();
 }
