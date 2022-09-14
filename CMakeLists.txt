@@ -4,4 +4,4 @@ project(cppclass)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(cppclass main.cpp)
-add_executable(homework homework220909.cpp)
+add_executable(homework homework/220914/homework220914.cpp)

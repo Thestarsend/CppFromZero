@@ -10,6 +10,10 @@ using namespace std;
 //abort
 
 int main() {
+    char aa = 'S';
+    char ss = aa+32;
+    cout << ss;
+
     int s;
     int hour[3];
 
