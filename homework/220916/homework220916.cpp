@@ -81,7 +81,7 @@ void fourth(){
     }
 }
 
-void fifth(){
+void numberDigit(){
 //    5)输入一正整数，输出其逆序数。（如输入1234，输出4321）
     int input;
     int m;
@@ -208,9 +208,9 @@ void pi(){
 
 int main(){
 //    first();
-    second();
+//    second();
 //    third();
-//    fourth();
+    fourth();
 //    fifth();
 //    sixth();
 //    seventh();

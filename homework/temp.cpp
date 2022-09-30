@@ -24,7 +24,7 @@ void fourth(){
 
 }
 
-void fifth(){
+void numberDigit(){
 
 }
 
