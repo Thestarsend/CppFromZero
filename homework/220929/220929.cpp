@@ -6,6 +6,7 @@
 #include "iostream"
 #include "iomanip"
 #include "algorithm"
+#include "cmath"
 
 using namespace std;
 
@@ -21,7 +22,7 @@ using namespace std;
 
 //1) 求一个数是否是质数
 bool first(int input){
-    for (int i = 2; i < input; i++) {
+    for (int i = 2; i < sqrt(input); i++) {
         if (input % i == 0){
             return false;
         }
